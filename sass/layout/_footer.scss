@@ -1,0 +1,27 @@
+footer{
+    background-color: $color-bloc-footer;
+    color: $textcolor-footer;
+    margin: 0;
+    padding: 2em 1em;
+    
+    h1{
+        font-family: 'Shrikhand', cursive;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    p{
+        font-size: 18px;
+    }
+
+    .contact{
+        font-size: 18px;
+        text-decoration: none;
+        color: $textcolor-footer;
+    }
+
+    .footer__icon{
+        width: 1em;
+        margin-right: 0.5em;
+    }
+}

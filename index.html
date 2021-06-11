@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ohmyfood</title>
+    <link rel="stylesheet" href="./public/css/style.css">
+    <script src="https://kit.fontawesome.com/f00dd8d0c9.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+  
+    <div class="loader">
+        <div class="loader__spinner"></div>
+    </div>
+  
+    <div id="main__bloc-page">
+    
+    <header>
+            <h1 class="header__logo">ohmyfood</h1>  
+    </header>
+        
+            <section class="bloc-page__header">
+                <div class="localisation">
+                        <h2 class="localisation__name">Paris, Belleville</h2>
+                        <i class="fa fa-map-marker localisation__icon" aria-hidden="true"></i>
+                </div>
+
+                <div class="reservation-bloc">
+                        <h2 class="reservation-bloc__title">Réservez le menu qui vous convient</h2>
+                        <p class="reservation-bloc__byline">Découvrez des restaurants d'exception, sélectionés par nos sélectionnés</p>    
+                </div>
+
+                <div class="button">
+                    <div class="btn">Explorer mes restaurants</div>
+                </div>   
+
+            </section>  
+            
+            <!--bloc fonctionnement -->
+            <section class="operation-bloc">
+                <h2 class="operation-bloc__title">Fonctionnement</h2>
+                
+                <div class="operation-bloc__level">
+                    <div class="operation-bloc__number">1</div>
+                    <div class="operation-bloc__action">
+                        <i class="fa fa-tablet action__icon" aria-hidden="true"></i>
+                        <p class="action__name">Choisissez un restaurant</p>
+                    </div>
+                </div>
+
+                <div class="operation-bloc__level">
+                    <div class="operation-bloc__number">2</div>
+                    <div class="operation-bloc__action">
+                        <i class="fa fa-list-ul action__icon" aria-hidden="true"></i> 
+                        <p class="action__name">Composez votre menu</p>
+                    </div>
+                </div>
+
+                <div class="operation-bloc__level">
+                    <div class="operation-bloc__number">3</div>
+                    <div class="operation-bloc__action">
+                        <i class="fas fa-store action__icon"></i> 
+                        <p class="action__name">Dégustez au restaurant</p>
+                    </div>
+                </div>
+
+            </section>
+
+                <!--bloc des restaurants-->
+            <section class="bloc-restaurants">
+                <h2 class="bloc-restaurants__title">Restaurants</h2>
+                <div class="restaurant">
+                    <div class="new">Nouveau</div>
+                    <a href="./menus/la_palette_du_gout.html">
+                        <img src="./public/img/restaurants/la_palette_du_gout.jpg" alt="la palette du goût">
+                        <div class="card__footer">
+
+                            <div class="name-city">
+                                <p class="name">La palette du goût</p>
+                                <p class="city">Ménilmontant</p>
+                            </div>
+
+                            <div class="card__btn menu__btn">
+                                <i class="far fa-heart fa-2x menu__like menu__like--noBg"></i>
+                                <i class="fas fa-heart fa-2x menu__like menu__like--Bg"></i>
+                            </div>
+                            
+                        </div>
+                    </a>
+                </div>
+
+                <div class="restaurant">
+                    <div class="new">Nouveau</div>
+                    <a href="./menus/note_enchantee.html">
+                        <img src="./public/img/restaurants/la_note_enchantee.jpg" alt="la note enchantée">
+                        <div class="card__footer">
+                            <div class="name-city">
+                                <p class="name">La note enchantée</p>
+                                <p class="city">Charonne</p>
+                            </div>
+                            <div class="card__btn menu__btn">
+                                <i class="far fa-heart fa-2x menu__like menu__like--noBg"></i>
+                                <i class="fas fa-heart fa-2x menu__like menu__like--Bg"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="restaurant">
+                    <a href="./menus/a_la_francaise.html">
+                        <img src="./public/img/restaurants/a_la_francaise.jpg" alt="à la française">
+                        <div class="card__footer">
+                            <div class="name-city">
+                                <p class="name">A la française</p>
+                                <p class="city">Cité Rouge</p>
+                            </div>
+                            <div class="card__btn menu__btn">
+                                <i class="far fa-heart fa-2x menu__like menu__like--noBg"></i>
+                                <i class="fas fa-heart fa-2x menu__like menu__like--Bg"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="restaurant">
+                    <a href="./menus/le_delice_des_sens.html">
+                        <img src="./public/img/restaurants/le_delice_des_sens.jpg" alt="le délice des sens">
+                        <div class="card__footer">
+                            <div class="name-city">
+                                <p class="name">Le délice des sens</p>
+                                <p class="city">Folie-Méricourt</p>
+                            </div>
+                            <div class="card__btn menu__btn">
+                                <i class="far fa-heart fa-2x menu__like menu__like--noBg"></i>
+                                <i class="fas fa-heart fa-2x menu__like menu__like--Bg"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        
+
+    <footer>    
+            <h1>ohmyfood</h1>
+            <p><i class="fa-utensils fas footer__icon" aria-hidden="true"></i> Proposer un restaurant</p>
+            <p><i class="fa-hands-helping fas footer__icon" aria-hidden="true"></i> Devenir partenaire</p>
+            <p>Mention légales</p>
+            <a class="contact" href="mailto:willy.isaac@expleogroup.com">Contact</a>            
+    </footer>
+    
+</div>
+
+</body>
+</html>
