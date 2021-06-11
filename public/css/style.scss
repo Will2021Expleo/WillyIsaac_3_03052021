@@ -1,65 +1,65 @@
 @import url('https://fonts.googleapis.com/css2? famille=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,500;1,700;1,900&family=Shrikhand&display=swap');
-    
-    @import "../../sass/utils/variables"; //import des variables//
-    @import "../../sass/utils/mixins"; //import des mixins//
-    @import "../../sass/layout/header";
-    @import "../../sass/layout/footer";
-    @import "../../sass/components/buttons";
-    @import "../../sass/utils/keyframes";
-    @import "../../sass/base/body";
-    @import "../../sass/base/images";
-    @import "../../sass/components/spinner";
- 
-.bloc-page__header{
+
+@import "../../sass/utils/variables"; //import des variables//
+@import "../../sass/utils/mixins"; //import des mixins//
+@import "../../sass/layout/header";
+@import "../../sass/layout/footer";
+@import "../../sass/components/buttons";
+@import "../../sass/utils/keyframes";
+@import "../../sass/base/body";
+@import "../../sass/base/images";
+@import "../../sass/components/spinner";
+
+.bloc-page__header {
     @include flexbox-center;
     background-color: $color-bloc-page;
     padding-bottom: 1em;
     flex-direction: column;
 
-.localisation{
-    @include box-localisation;
-    @include flexbox-center;
-    flex-direction: row-reverse;
+    .localisation {
+        @include box-localisation;
+        @include flexbox-center;
+        flex-direction: row-reverse;
 
 
-        .localisation__name{
+        .localisation__name {
             font-size: 18px;
         }
 
-        .localisation__icon{
+        .localisation__icon {
             margin-right: 1em;
-        } 
-}
-
-.reservation-bloc{
-    @include flexbox-center;    
-    flex-direction: column;
-    padding: 3em 1.5em 1em 1.5em;
-
-    .reservation-bloc__title{
-        font-size: 18px;
-        text-align: center;
+        }
     }
-    
-        .reservation-bloc__byline{
+
+    .reservation-bloc {
+        @include flexbox-center;
+        flex-direction: column;
+        padding: 3em 1.5em 1em 1.5em;
+
+        .reservation-bloc__title {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .reservation-bloc__byline {
             text-align: center;
             margin: 0;
             padding: 0;
-        }     
+        }
+    }
 }
 
-}   
-.operation-bloc{
+.operation-bloc {
     padding-left: 2em;
     padding-right: 1em;
     margin: 0;
-    
-    .operation-bloc__level{
+
+    .operation-bloc__level {
         position: relative;
         margin-bottom: 1.5em;
-       
 
-        .operation-bloc__number{
+
+        .operation-bloc__number {
             @include flexbox-center;
             background-color: $color-primary;
             color: white;
@@ -72,138 +72,81 @@
             left: -1em;
             z-index: 1;
         }
-    
-        .operation-bloc__action{
+
+        .operation-bloc__action {
             @include operations-blocs;
-                &:hover{
-                    background-color: $color_secondary_lighten;
-                    color:#000;
-                    }
-                
-                .operation-bloc__title{
-                    font-size: 18px;
-                }
-            
-            .action__icon{
+
+            &:hover {
+                background-color: $color_secondary_lighten;
+                color: #000;
+            }
+
+            .operation-bloc__title {
+                font-size: 18px;
+            }
+
+            .action__icon {
                 margin-left: 2em;
                 margin-right: 2em;
-                     
             }
-            .action__name{
+
+            .action__name {
                 font-weight: 600;
-                 
             }
         }
-    }  
-
-    .operation-bloc__action:hover .action__icon{
-        color: darken($color_primary_darken, 15%);
-    }      
-}
-    
-        .bloc-restaurants{
-        background-color: $color-bloc-page;
-        padding: 1em;
-
-        .bloc-restaurants__tile{
-            font-size: 18px;
-        }
-        
-        .restaurant{
-            background-color: white;
-            margin-bottom: 1.5em;
-            border-radius: 20px;
-            position: relative;
-            
-            .new{
-                background-color: $color-third;
-                color: darken($color-third, 50%);
-                padding: 10px;
-                position: absolute;
-                right: 1em;
-                top: 1em;
-                border-radius: 3px;
-            }
-            
-            .card__footer{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin: 0 0.5em;
-                position: relative;   
-                
-                .menu {
-                    margin-top: -4rem;
-                    border-radius: 2rem 2rem 0 0;
-                    background-color: #f6f6f6;
-                    z-index: 1;
-                    position: relative;
-                  
-                    &__btn {
-                    @include flexbox-center;
-                      height: 2rem;
-                      width: 2rem;
-                      background-color: transparent;
-                      border: transparent 0px solid;
-                      padding: 0;
-                      cursor: pointer;
-                      position: relative;
-                      background-color: black;
-                      
-                      &:hover::before {
-                        opacity: 1;
-                      }
-                      
-                      &::before {
-                        opacity: 0;
-                        transition: 0.5s;
-                        content: "";
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        height: 100%;
-                        width: 100%;
-                        @include background-btn-hover;
-                      }
-                    }
-                  
-                    &__like {
-                      transition-duration: .25s;
-                      background-color: #f6f6f6;
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      height: 100%;
-                      width: 100%;
-                      display:flex;
-                      align-items:center;
-                      justify-content:center;
-                      mix-blend-mode: lighten;
-                    }
-                  
-                    &__btn:hover {
-                      .menu__like {
-                        &--noBg {
-                          opacity: 0;
-                        }
-                      }
-                    }
-                  }
-                
-                .name{
-                    
-                    font-size: $font-size-name-city;
-                    font-weight: 700;
-                    margin: 0.5em 0 0.5em 0.5em;
-                }
-                .city{
-                    font-size: $font-size-name-city;
-                    margin: 0 0 0.5em 0.5em;
-                }
-            }
-        }     
     }
 
+    .operation-bloc__action:hover .action__icon {
+        color: darken($color_primary_darken, 15%);
+    }
+}
 
-    
-   
+.bloc-restaurants {
+    background-color: $color-bloc-page;
+    padding: 1em;
+
+    .bloc-restaurants__tile {
+        font-size: 18px;
+    }
+
+    .restaurant {
+        background-color: white;
+        margin-bottom: 1.5em;
+        border-radius: 20px;
+        position: relative;
+
+        .new {
+            background-color: $color-third;
+            color: darken($color-third, 50%);
+            padding: 10px;
+            position: absolute;
+            right: 1em;
+            top: 1em;
+            border-radius: 3px;
+        }
+
+        .card__footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 0.5em;
+            position: relative;
+
+            .menu {
+                @include heart-icon-cards;
+            }
+
+            .name {
+
+                font-size: $font-size-name-city;
+                font-weight: 700;
+                margin: 0.5em 0 0.5em 0.5em;
+            }
+
+            .city {
+                font-size: $font-size-name-city;
+                margin: 0 0 0.5em 0.5em;
+            }
+        }
+    }
+}

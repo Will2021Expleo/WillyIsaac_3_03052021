@@ -1,4 +1,10 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2? famille=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,500;1,700;1,900&family=Shrikhand&display=swap");
+/*flexbox générique pour centrer les éléments*/
+/*En-tête des menus : entrées, plats et dessserts */
+/* bloc  nom du menu et son accompagnement*/
+/*mixin pour l'animation des blocs menus au chargement de la page*/
+/*mixin pour les coeurs page d'accueil et menus*/
 header {
   text-align: center;
   position: relative;
@@ -10,6 +16,9 @@ header .header__logo {
   font-weight: 900;
   margin: 0;
   padding: 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .header-menu {
@@ -33,7 +42,7 @@ header .header__logo {
   display: block;
   position: fixed;
   position: absolute;
-  top: 0.25em;
+  top: 0.6em;
   left: 1em;
 }
 
@@ -71,7 +80,6 @@ footer .footer__icon {
   margin-right: 0.5em;
 }
 
-/*check btn price menus*/
 /* explore btn and order btn*/
 .button {
   display: -webkit-box;
@@ -124,6 +132,7 @@ footer .footer__icon {
   transition: opacity 250ms;
 }
 
+/*green check btn price menus*/
 /*keyframes pour les prix des menus*/
 @-webkit-keyframes apparition {
   from {
@@ -147,7 +156,7 @@ footer .footer__icon {
 }
 
 /*keyframes pour les menus*/
-@-webkit-keyframes load-page {
+@-webkit-keyframes load-cards {
   0% {
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -157,7 +166,7 @@ footer .footer__icon {
             transform: scale(1);
   }
 }
-@keyframes load-page {
+@keyframes load-cards {
   0% {
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -165,30 +174,6 @@ footer .footer__icon {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
-  }
-}
-
-/*keyframes bloc-page index.html*/
-@-webkit-keyframes bloc-page {
-  0% {
-    opacity: 0;
-  }
-  80% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes bloc-page {
-  0% {
-    opacity: 0;
-  }
-  80% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
@@ -250,7 +235,7 @@ img {
           align-items: center;
 }
 
-.loader__spinner {
+.loader .loader__spinner {
   margin: auto;
   margin-top: 80px;
   margin-bottom: 100px;
@@ -299,11 +284,35 @@ img {
   }
 }
 
-/*bloc-page aniamtion*/
+/*bloc-page animation*/
 #main__bloc-page {
   opacity: 1;
   -webkit-animation: bloc-page 2.5s linear;
           animation: bloc-page 2.5s linear;
+}
+
+/*keyframes bloc-page index.html*/
+@-webkit-keyframes bloc-page {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bloc-page {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .bloc-page__header {
@@ -501,10 +510,14 @@ img {
   border-radius: 2rem 2rem 0 0;
   background-color: #f6f6f6;
   z-index: 1;
-  position: relative;
 }
 
 .bloc-restaurants .restaurant .card__footer .menu__btn {
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  border: transparent 0px solid;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -514,14 +527,11 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 2rem;
-  width: 2rem;
-  background-color: transparent;
-  border: transparent 0px solid;
-  padding: 0;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   background-color: black;
+  top: 30px;
+  right: 5px;
 }
 
 .bloc-restaurants .restaurant .card__footer .menu__btn:hover::before {
@@ -535,7 +545,7 @@ img {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   height: 100%;
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#fface8), to(#ae80e5));
@@ -548,18 +558,18 @@ img {
   background-color: #f6f6f6;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   height: 100%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   mix-blend-mode: lighten;
 }
 

@@ -1,17 +1,17 @@
     //colors
 
-    $color-primary : #9356DC ;
+    $color-primary : #9356DC;
     $color-secondary: #FF79DA;
+    $color-third: #99E2D0;
     $color_primary_lighten: lighten($color-primary, 10%);
     $color_secondary_lighten: lighten($color-secondary, 10%);
     $color_primary_darken: darken($color-primary, 10%);
     $color_secondary_darken: darken($color-secondary, 10%);
-    $color-third: #99E2D0;
     $color-bloc-footer: rgb(53, 53, 52);
     $color-bloc-page: rgb(245, 244, 244);
     $textcolor-footer: white;
     $textcolor-btn: white;
-    
+
 
     //font-size
     $font-size-name-city: 20px;
@@ -19,4 +19,3 @@
     //border-rad
     $border-rad-btn: 30px;
     $border-rad-img: 30px;
-    

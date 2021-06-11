@@ -1,10 +1,11 @@
 /*spinner animation */
-.loader{
+.loader {
   width: 100%;
   height: auto;
   @include flexbox-center;
-}
-  .loader__spinner{    
+
+
+  .loader__spinner {
     margin: auto;
     margin-top: 80px;
     margin-bottom: 100px;
@@ -15,32 +16,47 @@
     border-radius: 50%;
     background-color: lighten($color-third, 20%);
     animation: spin 2s linear;
-   
+
     position: absolute;
-    top:0;
+    top: 0;
     opacity: 0;
-   }
+  }
+}
 
 /*keyframes spinner*/
-@keyframes spin{
-  0%{ 
-      transform: rotate(0deg) scale(1);
-      opacity: 1;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
   }
-  80%{
+
+  80% {
     opacity: 0.2;
   }
-  100%{
+
+  100% {
     transform: rotate(720deg) scale(1);
     opacity: 0;
   }
 }
 
-    /*bloc-page aniamtion*/
-#main__bloc-page{
-opacity: 1;
-animation: bloc-page 2.5s linear;
+/*bloc-page animation*/
+#main__bloc-page {
+  opacity: 1;
+  animation: bloc-page 2.5s linear;
 }
 
+/*keyframes bloc-page index.html*/
+@keyframes bloc-page {
+  0% {
+    opacity: 0;
+  }
 
-  
+  80% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

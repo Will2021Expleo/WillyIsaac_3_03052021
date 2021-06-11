@@ -1,3 +1,20 @@
+/*flexbox générique pour centrer les éléments*/
+@mixin flexbox-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//mixins page d'accueil : localisation//
+@mixin box-localisation($color: $color-bloc-page, ) {
+    background-color: darken($color, 5%);
+    border-top: 4px solid darken($color, 10%);
+    font-weight: 600;
+    height: 2em;
+    width: 100%;
+    padding: 10px 0;
+}
+
 //mixins page d'accueil : choix, composition et dégustation//
 @mixin operations-blocs {
     background-color: $color-bloc-page;
@@ -8,45 +25,32 @@
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 0.5em;
-    box-shadow: 0.25em 0.25em darken($color-bloc-page, 10%);        
+    box-shadow: 0.25em 0.25em darken($color-bloc-page, 10%);
 }
 
-@mixin box-localisation($color: $color-bloc-page, ){
-    background-color: darken($color, 5%);
-    border-top: 4px solid darken($color, 10%);
-    font-weight: 600;
-    height: 2em;
-    width: 100%;
-    padding: 10px 0;
-}
-
-//mixins pages menus//
-@mixin style-titles-menus{
-    margin: 0.5em 0 0 0.5em;
-    text-overflow: ellipsis;
+/*En-tête des menus : entrées, plats et dessserts */
+@mixin card-title {
+    margin: 0 0.5em 4.5em 0.5em;
     overflow: hidden;
-    font-weight: 700;
-    font-size: 20px;
-}
-@mixin style-accompaniments{
     text-overflow: ellipsis;
-        overflow: hidden;
-        margin: 0.5em 0 0 0.5em;
+    white-space: nowrap;
+    padding: 0;
+
+    .bloc__title {
+        text-transform: uppercase;
+        margin: 0;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 3em;
+            height: 0.25em;
+        }
+    }
 }
 
-@mixin style-prices{
-    @include flexbox-center;
-    font-weight: 700;
-    font-size: 20px;
-    width: 3em;
-    height: 3em;
-    border-radius: 100%;
-    top: 2em;
-    right: 1em;
-    padding-left: 0.5em;
-}
-
-@mixin style-title-cards{
+//bloc des menus//
+@mixin style-cards-menus {
     background-color: white;
     display: flex;
     justify-content: center;
@@ -60,8 +64,8 @@
     border-radius: 20px;
 }
 
-
-@mixin details-menus{
+/* bloc  nom du menu et son accompagnement*/
+@mixin details-menus {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -69,10 +73,41 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    flex: 1; 
+    flex: 1;
 }
 
-@mixin anim-cards{
+//mixins pour le nom des menus //
+@mixin style-titles-menus {
+    margin: 0.5em 0 0 0.5em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+//mixins pour le nom des accompagnements //
+@mixin style-accompaniments {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0.5em 0 0 0.5em;
+}
+
+//mixins pour les prix du menus //
+@mixin style-prices {
+    @include flexbox-center;
+    font-weight: 700;
+    font-size: 20px;
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    top: 2em;
+    right: 1em;
+    padding-left: 0.5em;
+}
+
+
+/*mixin pour l'animation des blocs menus au chargement de la page*/
+@mixin anim-cards {
     cursor: pointer;
     animation: apparition 100ms;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -81,26 +116,64 @@
     max-width: 100%;
 }
 
-@mixin card-title {
-    margin: 0 0.5em 4.5em 0.5em;
-    overflow: hidden;
-    padding: 0;
 
-    .bloc__title{
-    text-transform: uppercase;
-    margin: 0;
-    position: relative;
-            
-        &::after{
+
+
+
+/*mixin pour les coeurs page d'accueil et menus*/
+@mixin heart-icon-cards {
+    margin-top: -4rem;
+    border-radius: 2rem 2rem 0 0;
+    background-color: #f6f6f6;
+    z-index: 1;
+
+    &__btn {
+        height: 2rem;
+        width: 2rem;
+        background-color: transparent;
+        border: transparent 0px solid;
+        padding: 0;
+        @include flexbox-center;
+        cursor: pointer;
+        position: absolute;
+        background-color: black;
+        top: 30px;
+        right: 5px;
+
+        &:hover::before {
+            opacity: 1;
+        }
+
+        &::before {
+            opacity: 0;
+            transition: 0.5s;
             content: "";
-            width: 3em;
-            height: 0.25em;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            @include background-btn-hover;
         }
     }
-}
 
-@mixin flexbox-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    &__like {
+        transition-duration: .25s;
+        background-color: #f6f6f6;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        @include flexbox-center;
+        mix-blend-mode: lighten;
+    }
+
+    &__btn:hover {
+        .menu__like {
+            &--noBg {
+                opacity: 0;
+            }
+        }
+    }
 }

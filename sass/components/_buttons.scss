@@ -1,47 +1,11 @@
 //bg all buttons
-@mixin background-btn($color_1:$color-primary, $color_2:$color-secondary){
+@mixin background-btn($color_1:$color-primary, $color_2:$color-secondary) {
     background: linear-gradient(to bottom, $color_2, $color_1);
 }
 
 //bg hover all buttons
-@mixin background-btn-hover{
+@mixin background-btn-hover {
     background: linear-gradient(to bottom, $color_secondary_lighten, $color_primary_lighten);
-}
-
-
-/*check btn price menus*/
-@mixin checkBtn-menus{
-    .checkBtn__bloc{
-        background-color: #99E2D0;
-        margin: -1rem -5rem -1rem 1rem;
-        width: 5em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition-duration: 600ms;
-    }
-
-    &:hover .checkBtn__bloc{
-        margin-right: 0em;
-    }
-
-    .checkBtn__menus{
-        width: 1.6em;
-        height: 1.6em;
-        background-color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 100px;
-        transform: rotate(180deg);
-        transition-duration: 800ms;
-    }
-    &:hover .checkBtn__menus{
-        transform: rotate(0);
-    }
-    .checkBtn__icon{
-        color: #99E2D0;
-    }
 }
 
 /* explore btn and order btn*/
@@ -50,9 +14,9 @@
     margin: 25px auto;
     font-weight: 500;
     color: $textcolor-btn;
-    
-    
-      .btn {
+
+
+    .btn {
         border-radius: $border-rad-btn;
         @include background-btn;
         font-size: 16px;
@@ -60,13 +24,16 @@
         position: relative;
         z-index: 1;
         cursor: pointer;
+
         &:hover {
             border-radius: $border-rad-btn;
+
             &::after {
                 border-radius: $border-rad-btn;
                 opacity: 1;
             }
         }
+
         &::after {
             border-radius: $border-rad-btn;
             content: "";
@@ -75,10 +42,43 @@
             right: 0;
             bottom: 0;
             left: 0;
-           @include background-btn-hover;
+            @include background-btn-hover;
             opacity: 0;
             z-index: -1;
             transition: opacity 250ms;
         }
     }
+}
+
+/*green check btn price menus*/
+@mixin checkBtn-menus {
+    .checkBtn__bloc {
+        background-color: #99E2D0;
+        margin: -1rem -5rem -1rem 1rem;
+        width: 5em;
+        @include flexbox-center;
+        transition-duration: 600ms;
     }
+
+    &:hover .checkBtn__bloc {
+        margin-right: 0em;
+    }
+
+    .checkBtn__menus {
+        @include flexbox-center;
+        width: 1.6em;
+        height: 1.6em;
+        background-color: white;
+        border-radius: 100px;
+        transform: rotate(180deg);
+        transition-duration: 800ms;
+    }
+
+    &:hover .checkBtn__menus {
+        transform: rotate(0);
+    }
+
+    .checkBtn__icon {
+        color: #99E2D0;
+    }
+}
